@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MovementWagon.cs" />
+    <Compile Include="Assets\Scripts\Level2\WagonMoveForward.cs" />
     <Compile Include="Assets\Unity Assets\ENTIGI\FantasyMonsterPack\Scripts\Controller.cs" />
     <Compile Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
