@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Level2\WagonMoveForward.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\AcidTurretScript.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\MachineGunScript.cs" />
+     <Compile Include="Assets\Scripts\TurretScripts\TeslaScript.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\TestScript.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\TurretScript.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\TurretTowerScript.cs" />
