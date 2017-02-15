@@ -38,8 +38,7 @@ public class GridSystemScript : MonoBehaviour
 	private int numRows, numColumns;		// Number of rows & columns
 	private GameObject[] grids;				// Dynamic array of grids[numRows * numCols]
 
-	// Use this for initialization
-	void Start ()
+	void Awake()
 	{
 		numRows = 0;
 		numColumns = 0;
@@ -59,6 +58,11 @@ public class GridSystemScript : MonoBehaviour
 		}
 
 		SetGridsNeighbours();
+	}
+
+	// Use this for initialization
+	void Start ()
+	{
 	}
 
 	// Update is called once per frame
@@ -87,6 +91,7 @@ public class GridSystemScript : MonoBehaviour
 			{
 				GridID id = ComputeID(row, column);
 				grids [id] = GameObject.Instantiate (gridPrefab.gameObject);
+				grids [id].GetComponent<Transform> ().SetParent (gameObject.GetComponent<Transform>());
 				Vector3 gridScale = gridPrefab.gameObject.GetComponent<Transform> ().localScale;
 				grids [id].GetComponent<Transform> ().position = new Vector3 (column * gridScale.x + originPosition.x, originPosition.y, row * gridScale.z + originPosition.z);
 				grids [id].GetComponent<GridScript>().SetID (id);
@@ -128,6 +133,7 @@ public class GridSystemScript : MonoBehaviour
 				{
 					GridID id = ComputeID(row, column);
 					grids [id] = GameObject.Instantiate (gridPrefab.gameObject);
+					grids [id].GetComponent<Transform> ().SetParent (gameObject.GetComponent<Transform>());
 					Vector3 gridScale = gridPrefab.gameObject.GetComponent<Transform> ().localScale;
 					grids [id].GetComponent<Transform> ().position = new Vector3 (column * gridScale.x + originPosition.x, originPosition.y, row * gridScale.z + originPosition.z);
 					grids [id].GetComponent<GridScript>().SetID (id);

@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-public class TowerScript : MonoBehaviour
+public class TurretScript : MonoBehaviour
 {
 
     public enum ATTSTYLE

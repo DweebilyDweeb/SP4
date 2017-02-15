@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MachineGunScript : TowerScript
+public class MachineGunTurretScript : TurretScript
 {
 
     private GameObject target;

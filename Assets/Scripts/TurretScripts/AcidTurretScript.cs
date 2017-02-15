@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AcidTowerScript : TowerScript {
+public class AcidTurretScript : TurretScript {
 
     private GameObject target;
     private Vector3 direction;

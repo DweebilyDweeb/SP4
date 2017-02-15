@@ -49,10 +49,11 @@
      <Compile Include="Assets\Scripts\GridScript.cs" />
      <Compile Include="Assets\Scripts\GridSystemScript.cs" />
      <Compile Include="Assets\Scripts\Level2\WagonMoveForward.cs" />
-     <Compile Include="Assets\Scripts\TurretScripts\AcidTowerScript.cs" />
+     <Compile Include="Assets\Scripts\TurretScripts\AcidTurretScript.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\MachineGunScript.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\TestScript.cs" />
-     <Compile Include="Assets\Scripts\TurretScripts\TowerScript.cs" />
+     <Compile Include="Assets\Scripts\TurretScripts\TurretScript.cs" />
+     <Compile Include="Assets\Scripts\TurretScripts\TurretTowerScript.cs" />
      <Compile Include="Assets\Unity Assets\ENTIGI\FantasyMonsterPack\Scripts\Controller.cs" />
      <Compile Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\Unity Assets\MOBA and Tower Defense\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
