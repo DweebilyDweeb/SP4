@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\GridScript.cs" />
      <Compile Include="Assets\Scripts\GridSystemScript.cs" />
      <Compile Include="Assets\Scripts\Level2\WagonMoveForward.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\MainMenuRotate.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\AcidTurretScript.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\MachineGunScript.cs" />
      <Compile Include="Assets\Scripts\TurretScripts\TeslaScript.cs" />

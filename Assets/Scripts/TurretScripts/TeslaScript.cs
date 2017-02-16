@@ -14,7 +14,7 @@ public class TeslaScript : TurretScript {
         minAttackDamage = 5;
         maxAttackDamage = 8;
         attackSpeed = 0.25f;
-        proximity = 5f;
+        proximity = 2f;
         direction = new Vector3(0, 0, 0);
     }
 
@@ -24,8 +24,17 @@ public class TeslaScript : TurretScript {
         base.Update();
         if (target)
         {
-            // Gets Vector3 direction from traget
-            direction = target.transform.position - transform.position;
+            if (!transform.GetChild(0).gameObject.activeInHierarchy)
+                transform.GetChild(0).gameObject.SetActive(true);
+
+            direction =  new Vector3(target.transform.position.x, 0, target.transform.position.z) 
+                - new Vector3(transform.position.x, 0, transform.position.z);
+            transform.rotation = Quaternion.LookRotation(direction.normalized);
+        }
+        else
+        {
+            if (transform.GetChild(0).gameObject.activeInHierarchy)
+                transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 
@@ -69,12 +78,12 @@ public class TeslaScript : TurretScript {
                 }
         }
 
-        Debug.DrawRay(transform.position, direction, new Color(1, 0, 1), 10);
+        //Debug.DrawRay(transform.position, direction, new Color(1, 0, 1), 10);
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position, direction, out hit, proximity))
         {
-            Debug.Log(hit.transform.gameObject.name);
+           
         }
     }
 
