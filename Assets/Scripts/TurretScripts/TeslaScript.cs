@@ -14,7 +14,7 @@ public class TeslaScript : TurretScript {
         minAttackDamage = 5;
         maxAttackDamage = 8;
         attackSpeed = 0.25f;
-        proximity = 2f;
+        proximity = 4f;
         direction = new Vector3(0, 0, 0);
     }
 
@@ -26,9 +26,8 @@ public class TeslaScript : TurretScript {
         {
             if (!transform.GetChild(0).gameObject.activeInHierarchy)
                 transform.GetChild(0).gameObject.SetActive(true);
+            direction = target.transform.position - transform.position;
 
-            direction =  new Vector3(target.transform.position.x, 0, target.transform.position.z) 
-                - new Vector3(transform.position.x, 0, transform.position.z);
             transform.rotation = Quaternion.LookRotation(direction.normalized);
         }
         else

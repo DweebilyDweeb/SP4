@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -68,8 +74,13 @@
     <Compile Include="Assets\Scripts\GridSystemScript.cs" />
     <Compile Include="Assets\Scripts\Level2\WagonMoveForward.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuRotate.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\Menu.cs" />
+    <Compile Include="Assets\Scripts\Monster\MonsterScript.cs" />
+    <Compile Include="Assets\Scripts\Monster\MonsterSpawnerScript.cs" />
     <Compile Include="Assets\Scripts\TurretScripts\AcidTurretScript.cs" />
     <Compile Include="Assets\Scripts\TurretScripts\MachineGunScript.cs" />
+    <Compile Include="Assets\Scripts\TurretScripts\MortarScript.cs" />
+    <Compile Include="Assets\Scripts\TurretScripts\TeslaScript.cs" />
     <Compile Include="Assets\Scripts\TurretScripts\TestScript.cs" />
     <Compile Include="Assets\Scripts\TurretScripts\TurretScript.cs" />
     <Compile Include="Assets\Scripts\TurretScripts\TurretTowerScript.cs" />

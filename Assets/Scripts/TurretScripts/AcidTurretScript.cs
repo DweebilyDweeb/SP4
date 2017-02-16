@@ -15,7 +15,7 @@ public class AcidTurretScript : TurretScript {
         minAttackDamage = 10;
         maxAttackDamage = 15;
         attackSpeed = 0.5f;
-        proximity = 4f;
+        proximity = 10f;
         direction = new Vector3(0, 0, 0);
         rotateSpd = 3f;
         attackStyle = ATTSTYLE.FURTHEST_FIRST;
