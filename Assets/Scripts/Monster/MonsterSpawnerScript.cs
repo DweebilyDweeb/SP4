@@ -11,7 +11,7 @@ public class MonsterSpawnerScript : MonoBehaviour {
 	public GridID _endID;
 	public List<GridID> path;
 
-	public GameObject goblinPrefab;
+	public GameObject testMonsterPrefab;
 	float spawnTimer;
 	int numMonsters;
 
@@ -25,18 +25,20 @@ public class MonsterSpawnerScript : MonoBehaviour {
 	void Start ()
 	{
 		GeneratePath ();
-		//SpawnGoblin ();
+
+		//Don't collide with other monsters.
+		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Monster"), LayerMask.NameToLayer("Monster"), true);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{	
 		spawnTimer -= Time.deltaTime;
-		if (spawnTimer <= 0.0f && numMonsters < 10)
+		if (spawnTimer <= 0.0f)
 		{
-			SpawnGoblin ();
-			spawnTimer = 2.5f;
-			++numMonsters;
+			SpawnTestMonster ();
+			spawnTimer = 1.0f;
+            ++numMonsters;
 		}
 	}
 
@@ -48,12 +50,11 @@ public class MonsterSpawnerScript : MonoBehaviour {
 		}
 	}
 
-	public void SpawnGoblin()
+	public void SpawnTestMonster()
 	{
-		GameObject goblin = GameObject.Instantiate (goblinPrefab);
-		goblin.GetComponent<MonsterScript> ().spawner = this;
-		goblin.GetComponent<MonsterScript> ().gridSystem = gridSystem;
-		goblin.GetComponent<MonsterScript> ().path = path;
+		GameObject goblin = GameObject.Instantiate (testMonsterPrefab);
+		goblin.GetComponent<AIMovement> ().gridSystem = gridSystem;
+		goblin.GetComponent<AIMovement> ().path = path;
 
 		if (path != null && path.Count > 0)
 		{
