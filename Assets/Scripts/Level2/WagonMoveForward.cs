@@ -14,8 +14,8 @@ public class WagonMoveForward : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //print("Framerate: " + 1.0f / Time.deltaTime);
-        gameObject.GetComponent<Transform>().Translate(Time.deltaTime * -movementSpeed, 0, 0, Space.World);
-        if (gameObject.GetComponent<Transform>().position.x < -3)
+        gameObject.GetComponent<Transform>().Translate(0, 0, Time.deltaTime * movementSpeed, Space.World);
+        if (gameObject.GetComponent<Transform>().position.z > 37)
         {
             gameObject.GetComponent<Transform>().position = startPosition;
         }

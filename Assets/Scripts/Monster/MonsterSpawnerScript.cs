@@ -6,7 +6,7 @@ using GridID = System.Int32;
 
 public class MonsterSpawnerScript : MonoBehaviour {
 
-	public GridSystem gridSystem;
+	public GridSystemScript gridSystem;
 	public GridID _startID;
 	public GridID _endID;
 	public List<GridID> path;

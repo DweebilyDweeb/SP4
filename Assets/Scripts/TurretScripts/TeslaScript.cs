@@ -6,9 +6,6 @@ public class TeslaScript : TurretScript {
     private GameObject target;
     private Vector3 direction;
 
-    private GameObject lightning;
-    private GameObject lightning2;
-
     // Use this for initialization
     protected override void Start()
     {
@@ -19,8 +16,6 @@ public class TeslaScript : TurretScript {
         attackSpeed = 0.25f;
         proximity = 4f;
         direction = new Vector3(0, 0, 0);
-        lightning = transform.GetChild(0).gameObject;
-        lightning2 = transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame
@@ -29,21 +24,16 @@ public class TeslaScript : TurretScript {
         base.Update();
         if (target)
         {
-            if (!lightning.activeInHierarchy)
-                lightning.SetActive(true);
-            if (!lightning2.activeInHierarchy)
-                lightning2.SetActive(true);
-
+            if (!transform.GetChild(0).gameObject.activeInHierarchy)
+                transform.GetChild(0).gameObject.SetActive(true);
             direction = target.transform.position - transform.position;
+
             transform.rotation = Quaternion.LookRotation(direction.normalized);
-            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, direction.magnitude * 0.28f);
         }
         else
         {
-            if (lightning.activeInHierarchy)
-                lightning.SetActive(false);
-            if (lightning2.activeInHierarchy)
-                lightning2.SetActive(false);
+            if (transform.GetChild(0).gameObject.activeInHierarchy)
+                transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 

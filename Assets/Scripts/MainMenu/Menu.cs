@@ -6,69 +6,69 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour {
     public Canvas MainCanvas;
     public Canvas OptionsCanvas;
-    public Canvas LevelSelectCanvas;
-    public Canvas PauseCanvas;
-    private float savedTimeScale;
+
     void Awake()
     {
-        if (OptionsCanvas == null && LevelSelectCanvas == null && PauseCanvas == null)
+        if (OptionsCanvas == null)
             return;
-        if (OptionsCanvas != null)
         OptionsCanvas.enabled = false;
-
-        if (LevelSelectCanvas != null)
-        LevelSelectCanvas.enabled = false;
-
-        if (PauseCanvas != null)
-        PauseCanvas.enabled = false;
-    }
-    void Start()
-    {
-        AudioListener.pause = false;
-        Time.timeScale = 1;
     }
 
-
-    public void MainOn()
-    {
-        OptionsCanvas.enabled = false;
-        MainCanvas.enabled = true;
-        LevelSelectCanvas.enabled = false;
-        PauseCanvas.enabled = false;
-    }
     public void OptionsOn()
     {
         OptionsCanvas.enabled = true;
         MainCanvas.enabled = false;
-        LevelSelectCanvas.enabled = false;
-        PauseCanvas.enabled = false;
     }
 
-    public void LevelSelectOn()
+    public void ReturnOn()
     {
         OptionsCanvas.enabled = false;
-        MainCanvas.enabled = false;
-        LevelSelectCanvas.enabled = true;
-        PauseCanvas.enabled = false;
+        MainCanvas.enabled = true;
     }
 
-    public void PauseOn()
+    public void LoadOn()
     {
-        OptionsCanvas.enabled = false;
-        MainCanvas.enabled = false;
-        LevelSelectCanvas.enabled = false;
-        PauseCanvas.enabled = true;
+        SceneManager.LoadScene("GameUI");
     }
-
+    public void ReturnToMain()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void ReturnToAudio()
+    {
+        SceneManager.LoadScene("Audio");
+    }
+    public void PauseQuest()
+    {
+        SceneManager.LoadScene("Quest");
+    }
+    public void PauseInv()
+    {
+        SceneManager.LoadScene("Inventory");
+    }
+    public void PauseSK()
+    {
+        SceneManager.LoadScene("Skill_Tree");
+    }
+    public void PauseMap()
+    {
+        SceneManager.LoadScene("Map");
+    }
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelMenuSelection");
+    }
+    public void WIPSelect()
+    {
+        SceneManager.LoadScene("WIP");
+    }
 
     public void GoToShowcase()
     {
         SceneManager.LoadScene("Showcase");
     }
-
-    public void ExitGame()
+    public void MenuProgress()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Progress");
     }
-
 }
