@@ -58,27 +58,26 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BuildingPhaseSystemScript.cs" />
     <Compile Include="Assets\Scripts\CameraRenderScript.cs" />
-    <Compile Include="Assets\Scripts\GridScript.cs" />
-    <Compile Include="Assets\Scripts\GridSystemScript.cs" />
+    <Compile Include="Assets\Scripts\Grid.cs" />
+    <Compile Include="Assets\Scripts\GridSystem.cs" />
     <Compile Include="Assets\Scripts\Level2\WagonMoveForward.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\DontDestroy.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuRotate.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Menu.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\Pause.cs" />
     <Compile Include="Assets\Scripts\Monster\AIMovement.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterScript.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterSpawnerScript.cs" />
     <Compile Include="Assets\Scripts\MovementWagon.cs" />
+    <Compile Include="Assets\Scripts\SelectedGridScript.cs" />
+    <Compile Include="Assets\Scripts\TestScript2.cs" />
     <Compile Include="Assets\Scripts\TurretScripts\AcidTurretScript.cs" />
     <Compile Include="Assets\Scripts\TurretScripts\MachineGunScript.cs" />
     <Compile Include="Assets\Scripts\TurretScripts\MortarScript.cs" />

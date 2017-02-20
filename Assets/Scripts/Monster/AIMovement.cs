@@ -6,7 +6,7 @@ using GridID = System.Int32;
 
 public class AIMovement : MonoBehaviour {
 
-    public GridSystemScript gridSystem; //Grid System
+    public GridSystem gridSystem; //Grid System
 
     public List<GridID> path; //Path
 	private int pathIndex; //Where are we along the path.    
