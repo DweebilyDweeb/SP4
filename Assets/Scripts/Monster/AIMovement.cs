@@ -6,9 +6,9 @@ using GridID = System.Int32;
 
 public class AIMovement : MonoBehaviour {
 
-    public GridSystemScript gridSystem; //Grid System
+    public GridSystem gridSystem; //Grid System
 
-    public List<GridID> path; //Path
+	public List<GridID> path; //Path
 	private int pathIndex; //Where are we along the path.    
 	private float reachedDistance; //How close must we be to the grid to have considered reaching it.
 
@@ -52,17 +52,21 @@ public class AIMovement : MonoBehaviour {
 		if (path == null) {
 			print("Path is null!");
 			SlowDown(0.1f);
-			GameObject.Destroy(gameObject);
+			//GameObject.Destroy(gameObject);
 			return;
 		} else if (path.Count == 0) {
 			print("Path Empty!");
 			SlowDown(0.1f);
-			GameObject.Destroy(gameObject);
+			//GameObject.Destroy(gameObject);
 			return;
 		} else if (pathIndex >= path.Count) {
-			print("Reached End!");
+			//print("Reached End!");
 			SlowDown(0.0f);
-			GameObject.Destroy(gameObject);
+			//GameObject.Destroy(gameObject);
+			return;
+		}
+
+		if (IsDone()) {
 			return;
 		}
 
@@ -106,9 +110,9 @@ public class AIMovement : MonoBehaviour {
 		}
 		float turnAmount = Vector3.Dot(moveDirection, gameObject.transform.right);
 		if (turnAmount > 0.7f) {
-			print("Turning Right");
+			//print("Turning Right");
 		} else if (turnAmount < -0.7f) {
-			print("Turning Left");
+			//print("Turning Left");
 		}
 
 		RotateTowards(moveDirection, rotationSpeed);
@@ -120,7 +124,8 @@ public class AIMovement : MonoBehaviour {
 		//gameObject.transform.Translate(moveDirection * Time.deltaTime * maxMovementSpeed, Space.World);
 
 		//If we've reached the grid, move on to the next one.
-		if ((destination - gameObject.transform.position).sqrMagnitude < reachedDistance * reachedDistance) {
+		float distanceToGridSquared = (destination - gameObject.transform.position).sqrMagnitude;
+		if (distanceToGridSquared < reachedDistance * reachedDistance) {
 			++pathIndex;
 		}
 
@@ -129,6 +134,10 @@ public class AIMovement : MonoBehaviour {
 		//print("Move Direction: " + moveDirection);
 		//print("Direction To Current Grid: " + directionToCurrentGrid);
 		//print("Destination: " + destination);
+	}
+
+	public float GetMaxMovementSpeed() {
+		return maxMovementSpeed;
 	}
 
 	protected virtual void RotateTowards(Vector3 _direction, float _rotationSpeed) {
@@ -157,4 +166,9 @@ public class AIMovement : MonoBehaviour {
 		_multiplier = Mathf.Clamp(_multiplier, 0.0f, 1.0f);
 		gameObject.GetComponent<Rigidbody>().velocity *= ((1.0f - Time.deltaTime) * _multiplier);
 	}
+
+	public bool IsDone() {
+		return (path == null) || (pathIndex >= path.Count);
+	}
+
 }
