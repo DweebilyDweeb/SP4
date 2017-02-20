@@ -4,7 +4,7 @@ using System.Collections;
 public class TurretTowerScript : MonoBehaviour {
 
     public int tileID;
-    public GridSystemScript gridSystem;
+    public GridSystem gridSystem;
 
 	// Use this for initialization
 	void Start () {
